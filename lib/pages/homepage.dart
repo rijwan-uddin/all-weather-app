@@ -10,11 +10,13 @@ class HomePageM extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    
       appBar: AppBar(
         title: Text('Weather London'),
         backgroundColor: Colors.blue,
       ),
       body: Center(
+
         child: Consumer<weatherProv>(
           builder: (context, weatherProvider, _) {
             if (weatherProvider.weather == null) {
@@ -90,6 +92,15 @@ class HomePageM extends StatelessWidget {
                             'Visibility: ${weather.visibility} meters',
                             style: TextStyle(fontSize: 18),
                           ),
+
+
+                        ],
+
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
                           Text(
                             'Sunrise: ${_convertTimestampToTime(weather.sys?.sunrise as int?)}',
                             style: TextStyle(fontSize: 18),
