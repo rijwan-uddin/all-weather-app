@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
 import '../model/weather_model.dart';
 
 class weatherProv extends ChangeNotifier {
@@ -23,7 +21,7 @@ class weatherProv extends ChangeNotifier {
         _weatherV = WeatherModel.fromJson(responseData);
         notifyListeners();
       } else {
-        throw Exception('Failed to load weather data');
+        throw Exception('Bad Request');
       }
     } catch (error) {
       throw error;
